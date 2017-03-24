@@ -342,7 +342,12 @@ report_addr(int fd, int err_level)
     char *peer_name;
     peer_name = get_peer_name(fd);
     if (peer_name != NULL) {
-        LOGE("failed to handshake with %s err_level %d", peer_name, err_level);
+        if (err_level == SUSPICIOUS) {
+            LOGE("timeout to handshake with %s err_level %d", peer_name, err_level);
+        }
+        else {
+            LOGE("failed to handshake with %s err_level %d", peer_name, err_level);
+        }
         update_block_list(peer_name, err_level);
     }
 }
