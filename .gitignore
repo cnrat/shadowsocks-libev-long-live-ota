@@ -71,3 +71,4 @@ doc/*.html
 #
 cmake-build*
 .idea/
+/src/.vscode/c_cpp_properties.json
