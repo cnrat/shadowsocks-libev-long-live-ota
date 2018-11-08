@@ -51,22 +51,6 @@ AC_ARG_WITH(
   [with_crypto_library="openssl"]
 )
 
-AC_ARG_ENABLE([documentation],
-  AS_HELP_STRING([--disable-documentation], [do not build documentation]),
-  [disable_documentation=true],
-  [disable_documentation=false])
-AM_CONDITIONAL([ENABLE_DOCUMENTATION], [test x$disable_documentation = xfalse])
-
-AM_COND_IF([ENABLE_DOCUMENTATION], [
-  AC_PATH_PROG([ASCIIDOC], [asciidoc])
-  test x"${ASCIIDOC}" != x || AC_MSG_ERROR([Cannot find `asciidoc` in PATH.]) 
-  AC_PATH_PROG([XMLTO], [xmlto])
-  test x"$XMLTO" != x || AC_MSG_ERROR([Cannot find `xmlto` in PATH.]) 
-  AC_PATH_PROG([GZIP], [gzip], [gzip])
-  AC_PATH_PROG([MV], [mv], [mv])
-  AC_PROG_SED
-])
-
 dnl Checks for programs.
 AC_PROG_CC
 AM_PROG_CC_C_O
@@ -322,9 +306,5 @@ AM_COND_IF([USE_SYSTEM_SHARED_LIB],[
   ],
   [AC_CONFIG_FILES([libudns/Makefile
                  libev/Makefile])])
-
-AM_COND_IF([ENABLE_DOCUMENTATION],
-  [AC_CONFIG_FILES([doc/Makefile])
-])
 
 AC_OUTPUT
