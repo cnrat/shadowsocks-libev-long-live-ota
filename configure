@@ -789,7 +789,6 @@ enable_libtool_lock
 with_pcre
 enable_system_shared_lib
 with_crypto_library
-enable_documentation
 enable_zlib
 with_zlib
 with_zlib_include
@@ -16061,10 +16060,6 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${USE_SYSTEM_SHARED_LIB_TRUE}" && test -z "${USE_SYSTEM_SHARED_LIB_FALSE}"; then
   as_fn_error $? "conditional \"USE_SYSTEM_SHARED_LIB\" was never defined.
-Usually this means the macro was only invoked conditionally." "$LINENO" 5
-fi
-if test -z "${ENABLE_DOCUMENTATION_TRUE}" && test -z "${ENABLE_DOCUMENTATION_FALSE}"; then
-  as_fn_error $? "conditional \"ENABLE_DOCUMENTATION\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${BUILD_REDIRECTOR_TRUE}" && test -z "${BUILD_REDIRECTOR_FALSE}"; then
