@@ -18,7 +18,6 @@ ENV DNS_ADDR_2  8.8.4.4
 
 RUN set -ex && \
     apk add --no-cache --virtual .build-deps \
-                                asciidoc \
                                 autoconf \
                                 build-base \
                                 curl \

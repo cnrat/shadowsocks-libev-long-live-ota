@@ -3,7 +3,6 @@ Section: net
 Priority: extra
 Maintainer: Max Lv <max.c.lv@gmail.com>
 Build-Depends:
- asciidoc,
  autotools-dev,
  debhelper (>= 9),
  dh-systemd (>= 1.5),

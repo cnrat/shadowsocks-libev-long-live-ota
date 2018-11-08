@@ -181,7 +181,7 @@ libshadowsocks_libev_la_OBJECTS =  \
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
-am__v_lt_1 = 
+am__v_lt_1 =
 libshadowsocks_libev_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(libshadowsocks_libev_la_CFLAGS) $(CFLAGS) \
@@ -271,11 +271,11 @@ am__v_P_1 = :
 AM_V_GEN = $(am__v_GEN_@AM_V@)
 am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
 am__v_GEN_0 = @echo "  GEN     " $@;
-am__v_GEN_1 = 
+am__v_GEN_1 =
 AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
-am__v_at_1 = 
+am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/auto/depcomp
 am__depfiles_maybe = depfiles
@@ -289,7 +289,7 @@ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CC = $(am__v_CC_@AM_V@)
 am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
 am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
+am__v_CC_1 =
 CCLD = $(CC)
 LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -297,7 +297,7 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
+am__v_CCLD_1 =
 SOURCES = $(libshadowsocks_libev_la_SOURCES) $(ss_local_SOURCES) \
 	$(ss_manager_SOURCES) $(ss_redir_SOURCES) $(ss_server_SOURCES) \
 	$(ss_tunnel_SOURCES)
@@ -335,7 +335,6 @@ ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
-ASCIIDOC = @ASCIIDOC@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
@@ -593,7 +592,7 @@ clean-libLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
-libshadowsocks-libev.la: $(libshadowsocks_libev_la_OBJECTS) $(libshadowsocks_libev_la_DEPENDENCIES) $(EXTRA_libshadowsocks_libev_la_DEPENDENCIES) 
+libshadowsocks-libev.la: $(libshadowsocks_libev_la_OBJECTS) $(libshadowsocks_libev_la_DEPENDENCIES) $(EXTRA_libshadowsocks_libev_la_DEPENDENCIES)
 	$(AM_V_CCLD)$(libshadowsocks_libev_la_LINK) -rpath $(libdir) $(libshadowsocks_libev_la_OBJECTS) $(libshadowsocks_libev_la_LIBADD) $(LIBS)
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
@@ -645,23 +644,23 @@ clean-binPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-ss-local$(EXEEXT): $(ss_local_OBJECTS) $(ss_local_DEPENDENCIES) $(EXTRA_ss_local_DEPENDENCIES) 
+ss-local$(EXEEXT): $(ss_local_OBJECTS) $(ss_local_DEPENDENCIES) $(EXTRA_ss_local_DEPENDENCIES)
 	@rm -f ss-local$(EXEEXT)
 	$(AM_V_CCLD)$(ss_local_LINK) $(ss_local_OBJECTS) $(ss_local_LDADD) $(LIBS)
 
-ss-manager$(EXEEXT): $(ss_manager_OBJECTS) $(ss_manager_DEPENDENCIES) $(EXTRA_ss_manager_DEPENDENCIES) 
+ss-manager$(EXEEXT): $(ss_manager_OBJECTS) $(ss_manager_DEPENDENCIES) $(EXTRA_ss_manager_DEPENDENCIES)
 	@rm -f ss-manager$(EXEEXT)
 	$(AM_V_CCLD)$(ss_manager_LINK) $(ss_manager_OBJECTS) $(ss_manager_LDADD) $(LIBS)
 
-ss-redir$(EXEEXT): $(ss_redir_OBJECTS) $(ss_redir_DEPENDENCIES) $(EXTRA_ss_redir_DEPENDENCIES) 
+ss-redir$(EXEEXT): $(ss_redir_OBJECTS) $(ss_redir_DEPENDENCIES) $(EXTRA_ss_redir_DEPENDENCIES)
 	@rm -f ss-redir$(EXEEXT)
 	$(AM_V_CCLD)$(ss_redir_LINK) $(ss_redir_OBJECTS) $(ss_redir_LDADD) $(LIBS)
 
-ss-server$(EXEEXT): $(ss_server_OBJECTS) $(ss_server_DEPENDENCIES) $(EXTRA_ss_server_DEPENDENCIES) 
+ss-server$(EXEEXT): $(ss_server_OBJECTS) $(ss_server_DEPENDENCIES) $(EXTRA_ss_server_DEPENDENCIES)
 	@rm -f ss-server$(EXEEXT)
 	$(AM_V_CCLD)$(ss_server_LINK) $(ss_server_OBJECTS) $(ss_server_LDADD) $(LIBS)
 
-ss-tunnel$(EXEEXT): $(ss_tunnel_OBJECTS) $(ss_tunnel_DEPENDENCIES) $(EXTRA_ss_tunnel_DEPENDENCIES) 
+ss-tunnel$(EXEEXT): $(ss_tunnel_OBJECTS) $(ss_tunnel_DEPENDENCIES) $(EXTRA_ss_tunnel_DEPENDENCIES)
 	@rm -f ss-tunnel$(EXEEXT)
 	$(AM_V_CCLD)$(ss_tunnel_LINK) $(ss_tunnel_OBJECTS) $(ss_tunnel_LDADD) $(LIBS)
 install-binSCRIPTS: $(bin_SCRIPTS)

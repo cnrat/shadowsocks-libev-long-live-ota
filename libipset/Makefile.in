@@ -117,7 +117,7 @@ libipset_la_OBJECTS = $(am_libipset_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
-am__v_lt_1 = 
+am__v_lt_1 =
 libipset_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libipset_la_CFLAGS) \
 	$(CFLAGS) $(libipset_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -128,11 +128,11 @@ am__v_P_1 = :
 AM_V_GEN = $(am__v_GEN_@AM_V@)
 am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
 am__v_GEN_0 = @echo "  GEN     " $@;
-am__v_GEN_1 = 
+am__v_GEN_1 =
 AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
-am__v_at_1 = 
+am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/auto/depcomp
 am__depfiles_maybe = depfiles
@@ -146,7 +146,7 @@ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CC = $(am__v_CC_@AM_V@)
 am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
 am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
+am__v_CC_1 =
 CCLD = $(CC)
 LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -154,7 +154,7 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
+am__v_CCLD_1 =
 SOURCES = $(libipset_la_SOURCES)
 DIST_SOURCES = $(libipset_la_SOURCES)
 am__can_run_installinfo = \
@@ -186,7 +186,6 @@ ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
-ASCIIDOC = @ASCIIDOC@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
@@ -314,7 +313,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LTLIBRARIES = libipset.la
 bdd_src = bdd/assignments.c bdd/basics.c bdd/bdd-iterator.c bdd/expanded.c \
-		  bdd/reachable.c bdd/read.c bdd/write.c 
+		  bdd/reachable.c bdd/read.c bdd/write.c
 
 map_src = map/allocation.c map/inspection.c map/ipv4_map.c map/ipv6_map.c \
 		  map/storage.c
@@ -425,7 +424,7 @@ set/libipset_la-iterator.lo: set/$(am__dirstamp) \
 set/libipset_la-storage.lo: set/$(am__dirstamp) \
 	set/$(DEPDIR)/$(am__dirstamp)
 
-libipset.la: $(libipset_la_OBJECTS) $(libipset_la_DEPENDENCIES) $(EXTRA_libipset_la_DEPENDENCIES) 
+libipset.la: $(libipset_la_OBJECTS) $(libipset_la_DEPENDENCIES) $(EXTRA_libipset_la_DEPENDENCIES)
 	$(AM_V_CCLD)$(libipset_la_LINK)  $(libipset_la_OBJECTS) $(libipset_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:

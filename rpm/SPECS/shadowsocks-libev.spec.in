@@ -10,7 +10,7 @@ Source0:	%{url}/archive/v%{version}.tar.gz
 
 AutoReq:        no
 Conflicts:	    python-shadowsocks python3-shadowsocks
-BuildRequires:	make gcc pcre-devel asciidoc xmlto
+BuildRequires:	make gcc pcre-devel xmlto
 Requires:       pcre
 
 %if 0%{?suse_version}
