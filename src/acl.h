@@ -49,6 +49,12 @@ int check_block_list(char *addr);
 int update_block_list(char *addr, int err_level);
 int remove_from_block_list(char *addr);
 
+void init_white_list(int firewall);
+void free_white_list();
+int check_white_list(char *addr);
+int update_white_list(char *addr, int err_level);
+int remove_from_white_list(char *addr);
+
 int outbound_block_match_host(const char *host);
 
 #endif // _ACL_H
