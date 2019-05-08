@@ -383,8 +383,15 @@ report_addr(int fd, int err_level)
         }
         else
         {
-            LOGE("failed to handshake with %s err_level %d", peer_name, err_level);
-            update_block_list(peer_name, err_level);
+            if (check_white_list(peer_name))
+            {
+                LOGE("false positive with %s err_level %d", peer_name, err_level);
+            }
+            else
+            {
+                LOGE("failed to handshake with %s err_level %d", peer_name, err_level);
+                update_block_list(peer_name, err_level);
+            }
         }
     }
 }
@@ -849,6 +856,7 @@ server_recv_cb(EV_P_ ev_io *w, int revents)
             close_and_free_remote(EV_A_ remote);
             return;
         }
+        update_white_list(server->fd, GRANTED);
         int s = send(remote->fd, remote->buf->array, remote->buf->len, 0);
         if (s == -1)
         {
@@ -1234,6 +1242,7 @@ server_send_cb(EV_P_ ev_io *w, int revents)
 static void
 block_list_clear_cb(EV_P_ ev_timer *watcher, int revents)
 {
+    clear_white_list();
     clear_block_list();
 }
 
