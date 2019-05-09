@@ -266,12 +266,8 @@ void init_block_list(int firewall)
 
 void init_white_list(int firewall)
 {
-    // Initialize cache
-#ifdef __linux__
-    cache_create(&white_list, 256, free_firewall_rule);
-#else
+    LOGE("Call init_white_list.");
     cache_create(&white_list, 256, NULL);
-#endif
 }
 
 void free_block_list()
@@ -285,10 +281,7 @@ void free_block_list()
 
 void free_white_list()
 {
-#ifdef __linux__
-    if (mode != NO_FIREWALL_MODE)
-        reset_firewall();
-#endif
+    LOGE("Free white_list.");
     cache_clear(white_list, 0); // Remove all items
 }
 
@@ -300,6 +293,7 @@ int remove_from_block_list(char *addr)
 
 int remove_from_white_list(char *addr)
 {
+    LOGE("Remove %s white_list.", addr);
     size_t addr_len = strlen(addr);
     return cache_remove(white_list, addr, addr_len);
 }
@@ -311,6 +305,7 @@ void clear_block_list()
 
 void clear_white_list()
 {
+    LOGE("Clear white_list.");
     cache_clear(white_list, 3600); // Clear items older than 1 hour
 }
 
@@ -336,9 +331,10 @@ int check_white_list(char *addr)
 
     if (cache_key_exist(white_list, addr, addr_len))
     {
+        LOGE("Check %s exists.");
         return 1;
     }
-
+    LOGE("Check %s not exists.");
     return 0;
 }
 
@@ -373,12 +369,14 @@ int update_block_list(char *addr, int err_level)
 
 int update_white_list(char *addr, int err_level)
 {
+
     size_t addr_len = strlen(addr);
 
     if (cache_key_exist(white_list, addr, addr_len))
     {
         int *count = NULL;
         cache_lookup(white_list, addr, addr_len, &count);
+        LOGE("[GRANTED] %s exists.", addr);
         return 1;
     }
     else

@@ -140,7 +140,6 @@ int cache_clear(struct cache *cache, ev_tstamp age)
     {
         if (now - entry->ts > age)
         {
-            LOGE("Clear cache %s", entry->key);
             HASH_DEL(cache->entries, entry);
             if (entry->data != NULL)
             {
@@ -264,7 +263,6 @@ int cache_key_exist(struct cache *cache, char *key, size_t key_len)
     HASH_FIND(hh, cache->entries, key, key_len, tmp);
     if (tmp)
     {
-        // LOGE("cache_key_exist called! %s found!", key);
         HASH_DELETE(hh, cache->entries, tmp);
         tmp->ts = ev_time();
         HASH_ADD_KEYPTR(hh, cache->entries, tmp->key, key_len, tmp);
@@ -272,7 +270,6 @@ int cache_key_exist(struct cache *cache, char *key, size_t key_len)
     }
     else
     {
-        // LOGE("cache_key_exist called! %s NOT found!", key);
         return 0;
     }
 
