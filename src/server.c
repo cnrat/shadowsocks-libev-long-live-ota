@@ -363,6 +363,7 @@ reset_addr(int fd)
     if (peer_name != NULL)
     {
         remove_from_block_list(peer_name);
+        remove_from_white_list(peer_name);
     }
 }
 
@@ -856,7 +857,7 @@ server_recv_cb(EV_P_ ev_io *w, int revents)
             close_and_free_remote(EV_A_ remote);
             return;
         }
-        update_white_list(server->fd, GRANTED);
+        update_white_list(get_peer_name(server->fd), GRANTED);
         int s = send(remote->fd, remote->buf->array, remote->buf->len, 0);
         if (s == -1)
         {
@@ -2240,6 +2241,9 @@ int main(int argc, char **argv)
     // init block list
     init_block_list(firewall);
 
+    // init white list
+    init_white_list(firewall);
+
     // Init connections
     cork_dllist_init(&connections);
 
@@ -2250,6 +2254,9 @@ int main(int argc, char **argv)
     {
         LOGI("closed gracefully");
     }
+
+    // Free white list
+    free_white_list();
 
     // Free block list
     free_block_list();
