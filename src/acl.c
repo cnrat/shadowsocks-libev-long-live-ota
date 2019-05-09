@@ -376,7 +376,6 @@ int update_white_list(char *addr, int err_level)
     {
         int *count = NULL;
         cache_lookup(white_list, addr, addr_len, &count);
-        // LOGE("[GRANTED] %s exists.", addr);
         return 1;
     }
     else
@@ -384,7 +383,7 @@ int update_white_list(char *addr, int err_level)
         int *count = (int *)ss_malloc(sizeof(int));
         *count = 1;
         cache_insert(white_list, addr, addr_len, count);
-        LOGE("[GRANTED] %s", addr);
+        LOGE("[GRANTED] %s ( %d / %d )", addr, HASH_COUNT(white_list->entries), white_list->max_entries);
     }
 
     return 0;
