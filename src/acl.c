@@ -331,10 +331,10 @@ int check_white_list(char *addr)
 
     if (cache_key_exist(white_list, addr, addr_len))
     {
-        LOGE("Check %s exists.");
+        LOGE("Check %s exists.", addr);
         return 1;
     }
-    LOGE("Check %s not exists.");
+    LOGE("Check %s not exists.", addr);
     return 0;
 }
 
