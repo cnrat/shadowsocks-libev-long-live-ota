@@ -383,7 +383,7 @@ int update_white_list(char *addr, int err_level)
         int *count = (int *)ss_malloc(sizeof(int));
         *count = 1;
         cache_insert(white_list, addr, addr_len, count);
-        LOGE("[GRANTED] %s ( %zu / %d )", addr, HASH_COUNT(white_list->entries), white_list->max_entries);
+        LOGE("[GRANTED] %s ( %d / %zu )", addr, HASH_COUNT(white_list->entries), white_list->max_entries);
     }
 
     return 0;
