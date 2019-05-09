@@ -336,11 +336,7 @@ int check_white_list(char *addr)
 
     if (cache_key_exist(white_list, addr, addr_len))
     {
-        int *count = NULL;
-        cache_lookup(white_list, addr, addr_len, &count);
-
-        if (count != NULL && *count > MAX_TRIES)
-            return 1;
+        return 1;
     }
 
     return 0;
@@ -383,12 +379,7 @@ int update_white_list(char *addr, int err_level)
     {
         int *count = NULL;
         cache_lookup(white_list, addr, addr_len, &count);
-        if (count != NULL)
-        {
-            if (*count > MAX_TRIES)
-                return 1;
-            (*count) += err_level;
-        }
+        return 1;
     }
     else
     {
@@ -396,10 +387,6 @@ int update_white_list(char *addr, int err_level)
         *count = 1;
         cache_insert(white_list, addr, addr_len, count);
         LOGE("[GRANTED] %s ", addr);
-#ifdef __linux__
-        if (mode != NO_FIREWALL_MODE)
-            set_firewall_rule(addr, 1);
-#endif
     }
 
     return 0;
