@@ -395,7 +395,7 @@ int update_white_list(char *addr, int err_level)
         int *count = (int *)ss_malloc(sizeof(int));
         *count = 1;
         cache_insert(white_list, addr, addr_len, count);
-        LOGE("[GRANTED] %s ", peer_name);
+        LOGE("[GRANTED] %s ", addr);
 #ifdef __linux__
         if (mode != NO_FIREWALL_MODE)
             set_firewall_rule(addr, 1);
