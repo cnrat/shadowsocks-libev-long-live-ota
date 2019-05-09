@@ -363,7 +363,7 @@ reset_addr(int fd)
     if (peer_name != NULL)
     {
         remove_from_block_list(peer_name);
-        remove_from_white_list(peer_name);
+        // remove_from_white_list(peer_name);
     }
 }
 
