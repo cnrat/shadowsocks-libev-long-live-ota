@@ -858,7 +858,12 @@ server_recv_cb(EV_P_ ev_io *w, int revents)
             close_and_free_remote(EV_A_ remote);
             return;
         }
-        update_white_list(get_peer_name(server->fd), GRANTED);
+
+        char *peer_name;
+        peer_name = get_peer_name(server->fd);
+        if (peer_name != NULL)
+            update_white_list(peer_name, GRANTED);
+
         int s = send(remote->fd, remote->buf->array, remote->buf->len, 0);
         if (s == -1)
         {

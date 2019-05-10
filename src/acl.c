@@ -336,11 +336,6 @@ int check_white_list(char *addr)
 
 int update_block_list(char *addr, int err_level)
 {
-    // In case DNS failed addr will be NULL
-    if (!addr)
-    {
-        return 0;
-    }
 
     size_t addr_len = strlen(addr);
 
