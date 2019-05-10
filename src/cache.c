@@ -170,6 +170,42 @@ int cache_clear(struct cache *cache, ev_tstamp age)
     return 0;
 }
 
+int cache_clear_debug(struct cache *cache, ev_tstamp age)
+{
+    struct cache_entry *entry, *tmp;
+
+    if (!cache)
+    {
+        return EINVAL;
+    }
+
+    ev_tstamp now = ev_time();
+
+    HASH_ITER(hh, cache->entries, entry, tmp)
+    {
+        LOGE("Cached( %d / %zu ): %s @ %f", HASH_COUNT(cache->entries), cache->max_entries, entry->key, entry->ts);
+        if (now - entry->ts > age)
+        {
+            HASH_DEL(cache->entries, entry);
+            if (entry->data != NULL)
+            {
+                if (cache->free_cb)
+                {
+                    cache->free_cb(entry->key, entry->data);
+                }
+                else
+                {
+                    ss_free(entry->data);
+                }
+            }
+            ss_free(entry->key);
+            ss_free(entry);
+        }
+    }
+
+    return 0;
+}
+
 /** Removes a cache entry
  *
  *  @param cache
