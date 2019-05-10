@@ -266,7 +266,6 @@ void init_block_list(int firewall)
 
 void init_white_list(int firewall)
 {
-    // LOGE("Call init_white_list.");
     cache_create(&white_list, 256, NULL);
 }
 
@@ -281,7 +280,6 @@ void free_block_list()
 
 void free_white_list()
 {
-    // LOGE("Free white_list.");
     cache_clear(white_list, 0); // Remove all items
 }
 
@@ -293,7 +291,6 @@ int remove_from_block_list(char *addr)
 
 int remove_from_white_list(char *addr)
 {
-    // LOGE("Remove %s white_list.", addr);
     size_t addr_len = strlen(addr);
     return cache_remove(white_list, addr, addr_len);
 }
@@ -305,7 +302,7 @@ void clear_block_list()
 
 void clear_white_list()
 {
-    cache_clear_debug(white_list, 3600); // Clear items older than 1 hour
+    cache_clear(white_list, 3600); // Clear items older than 1 hour
 }
 
 int check_block_list(char *addr)
@@ -382,7 +379,7 @@ int update_white_list(char *addr, int err_level)
         int *count = (int *)ss_malloc(sizeof(int));
         *count = 1;
         cache_insert(white_list, addr, addr_len, count);
-        LOGE("[GRANTED] %s ( %d / %zu )", addr, HASH_COUNT(white_list->entries), white_list->max_entries);
+        LOGE("[GRANTED] %s ( %d / %zu )", addr, cache_count(white_list), white_list->max_entries);
     }
 
     return 0;
