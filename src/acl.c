@@ -305,8 +305,7 @@ void clear_block_list()
 
 void clear_white_list()
 {
-    // LOGE("Clear white_list.");
-    cache_clear(white_list, 3600); // Clear items older than 1 hour
+    cache_clear_debug(white_list, 3600); // Clear items older than 1 hour
 }
 
 int check_block_list(char *addr)
