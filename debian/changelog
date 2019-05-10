@@ -1,3 +1,12 @@
+shadowsocks-libev (2.5.6u) unstable; urgency=medium
+
+  * Remove useless OTA.
+  * Remove useless asciidoc.
+  * Fix a bug cause false positive log output.
+  * Add whitelist triggered by a successful connection lasts for 3600 sec.
+
+ -- Ne <anonymous>  Fri, 10 May 2019 09:51:52 +0900
+
 shadowsocks-libev (2.5.6-1) unstable; urgency=medium
 
   * Add outbound ACL for server.
