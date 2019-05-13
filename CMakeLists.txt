@@ -13,7 +13,7 @@ set(PROJECT_NAME shadowsocks-libev)
 set(RELEASE_DATE 2015-09-03)
 project(${PROJECT_NAME})
 
-set(VERSION 2.5.6u)
+set(VERSION 2.5.7)
 
 
 set(with_crypto_library "openssl" CACHE STRING "build with the given crypto library, TYPE=openssl|polarssl|mbedtls default=openssl")
